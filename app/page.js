@@ -14,9 +14,7 @@ export default async function HomePage() {
             <span className="text-neutral-500">Engineering experiences.</span>
           </h1>
           <p data-reveal className="mt-6 text-neutral-400 text-lg max-w-xl leading-relaxed">
-            I am a full-stack engineer focused on breaking down complex problems into modular, high-performance software. From responsive frontend interfaces to scalable backend infrastructure and mobile systems.
-          </p>
-        </section>
+            Hi, my name is Duke Sebastian L. Iglesia, a full-stack developer and designer passionate about creating innovative solutions that merge technology and design. I specialize in building web applications, mobile apps, and scalable backend systems that deliver exceptional user experiences.
       </HeroReveal>
 
       <section className="mt-24">
