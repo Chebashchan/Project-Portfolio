@@ -15,6 +15,8 @@ export default async function HomePage() {
           </h1>
           <p data-reveal className="mt-6 text-neutral-400 text-lg max-w-xl leading-relaxed">
             Hi, my name is Duke Sebastian L. Iglesia, a full-stack developer and designer passionate about creating innovative solutions that merge technology and design. I specialize in building web applications, mobile apps, and scalable backend systems that deliver exceptional user experiences.
+          </p>
+        </section>
       </HeroReveal>
 
       <section className="mt-24">
@@ -24,3 +26,4 @@ export default async function HomePage() {
     </main>
   )
 }
+
