@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base-black: #0A0A0B;
+  --color-base-charcoal: #121214;
+  --color-base-surface: #1A1A1D;
+  --color-base-border: #2A2A2E;
+  
+  --color-accent: #7C9EFF;
+  --color-accent-soft: #A6BEFF;
+  
+  --shadow-glow-sm: 0 0 20px 0px rgba(124, 158, 255, 0.15);
+  --shadow-glow-md: 0 0 40px 0px rgba(124, 158, 255, 0.2);
+  --shadow-glow-border: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  
+  --radius-bento: 1.25rem;
+}
+
+body {
+  background-color: var(--color-base-black);
+  color: #e5e5e5;
+}
+
+.bento-tile {
+  background-color: var(--color-base-surface);
+  border: 1px solid var(--color-base-border);
+  border-radius: var(--radius-bento);
+  box-shadow: var(--shadow-glow-border);
+}
