@@ -1,6 +1,7 @@
 'use client'
 
 import { useTransition } from 'react'
+import Link from 'next/link'
 import { deleteProject } from '../../lib/actions/projects'
 
 export default function ProjectsTable({ projects }) {
@@ -38,11 +39,17 @@ export default function ProjectsTable({ projects }) {
               <td className="p-4 font-medium text-white">{project.title}</td>
               <td className="p-4 capitalize">{project.project_type}</td>
               <td className="p-4 text-xs font-mono text-neutral-400">{project.bento_size}</td>
-              <td className="p-4 text-right">
+              <td className="p-4 text-right space-x-4">
+                <Link
+                  href={`/admin/projects/${project.id}`}
+                  className="text-accent-soft hover:text-white font-medium cursor-pointer transition-colors"
+                >
+                  Edit
+                </Link>
                 <button
                   onClick={() => handleDelete(project.id)}
                   disabled={isPending}
-                  className="text-red-400 hover:text-red-300 font-medium cursor-pointer disabled:opacity-50"
+                  className="text-red-400 hover:text-red-300 font-medium cursor-pointer disabled:opacity-50 transition-colors"
                 >
                   Delete
                 </button>
