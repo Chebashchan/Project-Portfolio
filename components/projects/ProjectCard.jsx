@@ -77,30 +77,40 @@ export default function ProjectCard({ project }) {
       ref={cardRef}
       href={`/projects/${project.slug}`}
       style={{ transformStyle: 'preserve-3d', perspective: '800px' }}
-      className={`bento-tile group relative overflow-hidden block ${sizeClasses}`}
+      className={`bento-tile group relative overflow-hidden block w-full h-full min-h-[inherit] ${sizeClasses}`}
     >
+      {/* Background Image Layer */}
       {project.cover_image_url && (
-        <Image
-          src={project.cover_image_url}
-          alt={project.title}
-          fill
-          className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
+        <div className="absolute inset-0 z-0 w-full h-full">
+          <Image
+            src={project.cover_image_url}
+            alt=""
+            fill
+            className="object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
+          />
+        </div>
       )}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent pointer-events-none" />
+      {/* Dark Ambient Overlay */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-neutral-950 via-neutral-900/60 to-transparent pointer-events-none" />
 
-      <div className="relative z-10 flex flex-col justify-end h-full p-5 pointer-events-none">
-        <span className="text-xs uppercase tracking-wide text-accent-soft mb-1 font-medium">
+      {/* Content Layer Container */}
+      <div className="relative z-20 flex flex-col justify-end h-full p-5 pointer-events-none w-full">
+        <span className="text-[10px] uppercase tracking-wider text-accent-soft mb-1 font-semibold block">
           {project.project_type}
         </span>
-        <h3 className="text-white font-medium text-lg tracking-tight">{project.title}</h3>
-        <div className="flex flex-wrap gap-2 mt-2">
+        <h3 className="text-white font-medium text-base tracking-tight leading-snug break-words max-w-full">
+          {project.title}
+        </h3>
+        
+        {/* Technical Stack Tags Node Container */}
+        <div className="flex flex-wrap gap-1.5 mt-3 max-w-full">
           {project.tech_stack?.slice(0, 3).map((tech) => (
             <span
               key={tech}
-              className="text-[11px] px-2 py-0.5 rounded-full bg-white/10 text-neutral-300"
+              className="text-[10px] px-2 py-0.5 rounded-md bg-white/[0.06] border border-white/[0.03] text-neutral-300 block truncate max-w-[150px]"
             >
               {tech}
             </span>

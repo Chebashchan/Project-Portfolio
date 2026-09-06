@@ -29,15 +29,21 @@ body {
 }
 
 /* --- Premium Slate Bento Grid Base System Architecture Styles --- */
+/* --- Premium Slate Bento Grid Base System Architecture Styles --- */
+
 @layer utilities {
   .bento-tile {
-    @apply rounded-3xl bg-neutral-900/60 border border-white/[0.04] backdrop-blur-md transition-all duration-300 ease-out;
+    @apply rounded-3xl bg-neutral-900/60 border border-white/[0.04] backdrop-blur-md transition-all duration-300 ease-out flex flex-col justify-end;
+    /* Forces cell contents to stay contained on touch interfaces */
+    min-height: 100%;
+    height: 100%;
   }
   
   .bento-tile:hover {
     @apply border-white/[0.12] bg-neutral-900/80 shadow-2xl shadow-black/40;
   }
 }
+
 
 /* Custom scrollbar configuration logic for modern styling matching */
 .custom-scrollbar::-webkit-scrollbar {

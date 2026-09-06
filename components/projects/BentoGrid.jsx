@@ -50,7 +50,7 @@ export default function BentoGrid({ projects }) {
   }
 
   return (
-    <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-4 auto-rows-[140px] sm:auto-rows-[160px] md:auto-rows-[180px] gap-3 md:gap-4 w-full">
+    <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[220px] sm:auto-rows-[160px] md:auto-rows-[180px] gap-4 w-full">
       {projects.map((project) => (
         <div key={project.id} data-tile className="w-full h-full">
           <ProjectCard project={project} />
