@@ -102,16 +102,16 @@ export default function ProjectCard({ project }) {
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-neutral-950 via-neutral-900/60 to-transparent pointer-events-none" />
 
       {/* Content Layer Container */}
-      <div className="relative z-20 flex flex-col justify-end h-full p-5 pointer-events-none w-full">
-        <span className="text-[10px] uppercase tracking-wider text-accent-soft mb-1 font-semibold block">
+      <div className="relative z-20 flex flex-col justify-end h-full p-4 pointer-events-none w-full min-h-0">
+        <span className="text-[10px] uppercase tracking-wider text-accent-soft mb-1 font-semibold block shrink-0">
           {project.project_type}
         </span>
-        <h3 className="text-white font-medium text-base tracking-tight leading-snug break-words max-w-full">
+        <h3 className="text-white font-medium text-sm tracking-tight leading-snug break-words max-w-full line-clamp-3">
           {project.title}
         </h3>
         
         {/* Technical Stack Tags Node Container */}
-        <div className="flex flex-wrap gap-1.5 mt-3 max-w-full">
+        <div className="flex flex-wrap gap-1.5 mt-2 max-w-full shrink-0">
           {project.tech_stack?.slice(0, 3).map((tech) => (
             <span
               key={tech}
