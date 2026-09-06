@@ -11,6 +11,11 @@ export default function ProjectCard({ project }) {
   const cardRef = useRef(null)
   const sizeClasses = getBentoSizeClasses(project.bento_size)
 
+  // Grab the very first screenshot inside our array to use as the card background thumbnail cover
+  const cardThumbnail = project.project_gallery && project.project_gallery.length > 0 
+    ? project.project_gallery[0] 
+    : null
+
   useGSAP(
     () => {
       const card = cardRef.current
@@ -80,10 +85,10 @@ export default function ProjectCard({ project }) {
       className={`bento-tile group relative overflow-hidden block w-full h-full min-h-[inherit] ${sizeClasses}`}
     >
       {/* Background Image Layer */}
-      {project.cover_image_url && (
+      {cardThumbnail && (
         <div className="absolute inset-0 z-0 w-full h-full">
           <Image
-            src={project.cover_image_url}
+            src={cardThumbnail}
             alt=""
             fill
             className="object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none"
