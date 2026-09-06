@@ -1,5 +1,5 @@
 import { getProjectBySlug } from '../../../lib/data/projects'
-import { notFound } from 'not-found'
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import ProjectCarousel from '../../../components/projects/ProjectCarousel'
 
@@ -11,7 +11,6 @@ export default async function ProjectDetailPage({ params }) {
 
   return (
     <article className="max-w-4xl mx-auto px-6 py-16 text-neutral-300">
-      {/* Return Navigation Hook Link */}
       <Link href="/" className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-white transition-colors mb-8 group">
         <svg className="h-4 w-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -19,7 +18,6 @@ export default async function ProjectDetailPage({ params }) {
         Back to archive
       </Link>
 
-      {/* Header Info Block */}
       <header className="mb-8">
         <span className="text-xs uppercase tracking-wider text-accent-soft font-semibold px-2.5 py-1 rounded bg-white/[0.04] border border-white/[0.02]">
           {project.project_type}
@@ -29,10 +27,8 @@ export default async function ProjectDetailPage({ params }) {
         </h1>
       </header>
 
-      {/* Dynamic Slide Carousel Component Wrapper Container */}
       <ProjectCarousel images={project.project_gallery || []} />
 
-      {/* Detailed Description Columns Block Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-8">
         <div className="md:col-span-2 space-y-6">
           <h2 className="text-sm font-medium uppercase tracking-wider text-neutral-400 border-b border-base-border/50 pb-2">
@@ -43,7 +39,6 @@ export default async function ProjectDetailPage({ params }) {
           </p>
         </div>
 
-        {/* Sidebar Specification Node */}
         <div className="space-y-8">
           {project.tech_stack?.length > 0 && (
             <div className="space-y-3">
