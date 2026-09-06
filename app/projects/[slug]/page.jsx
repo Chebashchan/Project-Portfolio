@@ -1,7 +1,9 @@
 import { getProjectBySlug } from '../../../lib/data/projects'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import ProjectCarousel from '../../../components/projects/ProjectCarousel'
+// Change line 4 to this:
+import ProjectCarousel from '@/components/projects/ProjectCarousel'
+
 
 export default async function ProjectDetailPage({ params }) {
   const { slug } = await params
